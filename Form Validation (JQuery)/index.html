@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form action="" novalidate>
+        <div class="control">
+            <label for="firstname">First Name</label>
+            <input type="text" name="" id="firstname" placeholder="Enter your first name">
+        </div>
+        <div class="control">
+            <label for="lastname">Last Name</label>
+            <input type="text" name="" id="lastname" placeholder="Enter your last name">
+        </div>
+        <div class="control">
+            <label for="email">Email</label>
+            <input type="email" name="" id="email" placeholder="It should contian @ and .">
+        </div>
+        <div class="control">
+            <label for="mobile">Mobile</label>
+            <input type="text" name="" id="mobileno" placeholder="only 10 digits are allowed">
+        </div>
+        <div class="control gender">
+            <label for="gender">Gender</label>
+            <div class="radios">
+                <input type="radio" name="gender" id="gender">
+                <label for="gendermale">Male</label>
+                <input type="radio" name="gender" id="gender">
+                <label for="genderfemale">Female</label>
+            </div>
+        </div>
+        <div class="control">
+            <label for="dob">Date of Birth</label>
+            <input type="date" name="dob" id="dob">
+        </div>
+        <div class="control">
+            <label for="address" class="addresslabel">Address</label>
+            <textarea name="address" id="address"></textarea>
+        </div>
+        <div class="control">
+            <label for="city">City</label>
+            <input type="text" name="city" id="city" placeholder="Enter your city">
+        </div>
+        <div class="control">
+            <label for="pin">Area PIN</label>
+            <input type="text" name="pin" id="pin" placeholder="Enter PIN Code">
+        </div>
+        <div class="control">
+            <label for="state">State</label>
+            <input type="text" name="state" id="state" placeholder="Enter your state">
+        </div>
+        <div class="control">
+            <label for="qualification">Qualification</label>
+            <select name="qualification" id="qualification">
+                <option value="Select Qualification">Select Qualification</option>
+                <option value="Web Developer">Web Developer</option>
+                <option value="Application Developer">Application Developer</option>
+                <option value="Graphic Designer">Graphic Designer</option>
+            </select>
+        </div>
+        <div class="control">
+            <label for="specification" class="checklabel">Specification</label>
+            <div class="checks">
+                <div class="check" id="check1">
+                    <input type="checkbox" name="cs" id="specification">
+                    <label for="cs">Computer Science</label>
+                </div>
+                <div class="check" id="check2">
+                    <input type="checkbox" name="it" id="specification">
+                    <label for="it">Information Techonology</label>
+                </div>
+                <div class="check" id="check3">
+                    <input type="checkbox" name="ca" id="specification">
+                    <label for="ca">Computer Architecture</label>
+                </div>
+                <div class="check" id="check4">
+                    <input type="checkbox" name="tc" id="specification">
+                    <label for="tc">Tele Communication</label>
+                </div>
+            </div>
+        </div>
+        <div class="control">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Enter Password">
+        </div>
+        <div class="control">
+            <button type="submit">Register</button>
+        </div>
+    </form>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'
+        integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=='
+        crossorigin='anonymous' referrerpolicy='no-referrer'></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
