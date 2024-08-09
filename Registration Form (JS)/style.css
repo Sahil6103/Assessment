@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.error {
+  background-color: #f6b4ba;
+  padding: 12px 12px;
+  border-radius: 5px;
+  display: none;
+}
+
+#email-control {
+  flex: 1 1 100%;
+}
+
+#email-control span {
+  border-radius: 5px;
+  flex: 1 1 100%;
+}
