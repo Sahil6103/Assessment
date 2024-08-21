@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Interval Calculator</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Bootstrap DateTimePicker CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
+    <style>
+        .result-box {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container mt-5 d-flex flex-column justify-content-center align-items-center">
+        <h2 class="text-center">Date Interval</h2>
+        <div class="alert alert-danger d-none" id="error"></div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="startDate">From:</label>
+                    <input type="text" class="form-control datetimepicker" id="startDate">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="endDate">To:</label>
+                    <input type="text" class="form-control datetimepicker" id="endDate">
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-primary" id="calculateInterval">Calculate</button>
+        </div>
+        <div class="result-box text-center w-25" id="result" style="display: none;">
+            <!-- Result will be displayed here -->
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap DateTimePicker JS -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Initialize DateTimePicker for both input fields
+            $('.datetimepicker').datetimepicker({
+                format: 'MM/DD/YYYY'
+            });
+
+            // Calculate the interval between the selected dates when the button is clicked
+            $('#calculateInterval').click(() => {
+                // Get the values from the date pickers
+                var startDate = $('#startDate').data('DateTimePicker').date();
+                var endDate = $('#endDate').data('DateTimePicker').date();
+
+                // Check if both dates are selected
+                if (startDate && endDate) {
+                    // Calculate the difference in various units
+                    var years = endDate.diff(startDate, 'years');
+                    var months = endDate.diff(startDate, 'months');
+                    var weeks = endDate.diff(startDate, 'weeks');
+                    var days = endDate.diff(startDate, 'days');
+
+                    // Display the result
+                    var resultHtml = `
+                        <p>Date interval between ${startDate.format('MM/DD/YYYY')} and ${endDate.format('MM/DD/YYYY')}</p>
+                        <p>In years : ${years}</p>
+                        <p>In months : ${months}</p>
+                        <p>In weeks : ${weeks}</p>
+                        <p>In days : ${days}</p>
+                    `;
+                    $('#result').html(resultHtml).show();
+                } else {
+                    $('#result').html(`Select start and end dates.`).show();
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
